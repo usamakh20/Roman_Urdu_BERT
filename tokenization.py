@@ -20,3 +20,5 @@ roman_BWPT.train(
     limit_alphabet=1000,
     special_tokens=['[PAD]', '[UNK]', '[CLS]', '[MASK]', '[SEP]']
 )
+
+roman_BWPT.save_model(".", "roman-urdu-vocab-cased.txt")
