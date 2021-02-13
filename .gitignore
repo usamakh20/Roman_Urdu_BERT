@@ -1,6 +1,5 @@
 # Project exclude paths
 venv/
-roman-urdu-vocab-cased_30K.txt
 bert-base-uncased/
 bert-master/
 data/
@@ -9,3 +8,5 @@ trained_model_without_augmentation/
 all_data.txt
 augmented_vocab.txt
 BERT_ROMAN_URDU.ipynb
+roman-urdu-vocab*
+tf_examples_multi_cased.tfrecord
