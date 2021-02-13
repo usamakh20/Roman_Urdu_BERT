@@ -1,2 +1,11 @@
 # Project exclude paths
-/venv/
+venv/
+roman-urdu-vocab-cased_30K.txt
+bert-base-uncased/
+bert-master/
+data/
+multi_cased/
+trained_model_without_augmentation/
+all_data.txt
+augmented_vocab.txt
+BERT_ROMAN_URDU.ipynb

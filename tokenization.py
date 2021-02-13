@@ -14,10 +14,11 @@ roman_BWPT = tokenizers.BertWordPieceTokenizer(
 )
 
 roman_BWPT.train(
-    files=["ROMAN_URDU_DATASET.txt"],
-    vocab_size=30000,
+    files=["all_data.txt"],
+    vocab_size=20000,
     min_frequency=3,
     limit_alphabet=1000,
+    show_progress=True,
     special_tokens=['[PAD]', '[UNK]', '[CLS]', '[MASK]', '[SEP]']
 )
 
