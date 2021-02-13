@@ -29,3 +29,4 @@ python bert-master/create_pretraining_data.py \
 
 python bert-master/run_pretraining.py --input_file tf_examples_multi.tfrecord --output_dir trained_model --do_train True --do_eval True --bert_config_file multi_cased/bert_config.json --init_checkpoint multi_cased/bert_model.ckpt.index --train_batch_size 32 --max_seq_length 128 --max_predictions_per_seq 10 --num_train_steps 10000 --num_warmup_steps 10 --learning_rate 2e-5 
 
+use learning rate 2e-5 when starting from a pretrained model otherwise use 1e-4
