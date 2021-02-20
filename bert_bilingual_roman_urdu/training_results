@@ -1,0 +1,21 @@
+I0214 22:06:48.740534 140060939327296 evaluation.py:275] Finished evaluation at 2021-02-14-22:06:48
+INFO:tensorflow:Saving dict for global step 100000: global_step = 100000, loss = 4.586311, masked_lm_accuracy = 0.36056215, masked_lm_loss = 4.4996595, next_sentence_accuracy = 0.9575, next_sentence_loss = 0.085820034
+I0214 22:06:48.740727 140060939327296 estimator.py:2049] Saving dict for global step 100000: global_step = 100000, loss = 4.586311, masked_lm_accuracy = 0.36056215, masked_lm_loss = 4.4996595, next_sentence_accuracy = 0.9575, next_sentence_loss = 0.085820034
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 100000: bert_bilingual_roman_urdu/model.ckpt-100000
+I0214 22:06:49.040725 140060939327296 estimator.py:2109] Saving 'checkpoint_path' summary for global step 100000: bert_bilingual_roman_urdu/model.ckpt-100000
+INFO:tensorflow:evaluation_loop marked as finished
+I0214 22:06:49.041217 140060939327296 error_handling.py:101] evaluation_loop marked as finished
+INFO:tensorflow:***** Eval results *****
+I0214 22:06:49.041318 140060939327296 run_pretraining.py:483] ***** Eval results *****
+INFO:tensorflow:  global_step = 100000
+I0214 22:06:49.041365 140060939327296 run_pretraining.py:485]   global_step = 100000
+INFO:tensorflow:  loss = 4.586311
+I0214 22:06:49.041758 140060939327296 run_pretraining.py:485]   loss = 4.586311
+INFO:tensorflow:  masked_lm_accuracy = 0.36056215
+I0214 22:06:49.041799 140060939327296 run_pretraining.py:485]   masked_lm_accuracy = 0.36056215
+INFO:tensorflow:  masked_lm_loss = 4.4996595
+I0214 22:06:49.041835 140060939327296 run_pretraining.py:485]   masked_lm_loss = 4.4996595
+INFO:tensorflow:  next_sentence_accuracy = 0.9575
+I0214 22:06:49.041869 140060939327296 run_pretraining.py:485]   next_sentence_accuracy = 0.9575
+INFO:tensorflow:  next_sentence_loss = 0.085820034
+I0214 22:06:49.041903 140060939327296 run_pretraining.py:485]   next_sentence_loss = 0.085820034
