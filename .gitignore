@@ -3,6 +3,9 @@ venv/
 data/
 bert-master/
 multi_cased/
+data_parts/
+pretraining_data/
+pretraining_data_augmented_vocab/
 bert-base-uncased/
 bert_bilingual_roman_urdu/
 all_data.txt
