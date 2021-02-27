@@ -13,16 +13,19 @@ device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 model = BertForSequenceClassification.from_pretrained('bert_bilingual_roman_urdu', num_labels=3)
 tokenizer = BertTokenizer.from_pretrained('bert_bilingual_roman_urdu')
 
-senti_mix = pd.read_csv('fine_tuning_data/SentiMix_ru.csv')
+senti_mix_train = pd.read_csv('fine_tuning_data/SentiMix_train_ru.csv')
+senti_mix_test = pd.read_csv('fine_tuning_data/SentiMix_test_ru.csv')
 
-sentiment_categorical = senti_mix.sentiment.astype('category').cat
+sentiment_categorical = senti_mix_train['sentiment'].astype('category').cat
 class_names = list(sentiment_categorical.categories)
 
-sentences = list(senti_mix.sentence)
-sentiment = list(sentiment_categorical.codes)
+sentences_train = list(senti_mix_train.sentence)
+sentiment_train = list(sentiment_categorical.codes)
 
-X_train, X_test, y_train, y_test = train_test_split(sentences, sentiment, test_size=0.3)
-X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.1)
+X_test = list(senti_mix_test.sentence)
+y_test = list(senti_mix_test['sentiment'].astype('category').cat.codes)
+
+X_train, X_val, y_train, y_val = train_test_split(sentences_train, sentiment_train, test_size=0.1)
 
 train_encodings = tokenizer(X_train, truncation=True, padding=True, max_length=128)
 val_encodings = tokenizer(X_val, truncation=True, padding=True, max_length=128)
