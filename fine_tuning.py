@@ -8,9 +8,9 @@ from transformers import AdamW
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-model = BertForSequenceClassification.from_pretrained('results_senti_mix/checkpoint-4000',num_labels=3)
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased',num_labels=3)
 # model = BertForSequenceClassification.from_pretrained('bert_bilingual_roman_urdu', num_labels=3)
-tokenizer = BertTokenizer.from_pretrained('bert_bilingual_roman_urdu')
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 senti_mix_train = pd.read_csv('fine_tuning_data/SentiMix_train_ru.csv')
 senti_mix_test = pd.read_csv('fine_tuning_data/SentiMix_test_ru.csv')

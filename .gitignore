@@ -19,3 +19,7 @@ tf_examples_multi_cased.tfrecord
 /multilingual_model_old_without_augmentation/model.ckpt-9020.data-00000-of-00001
 /multilingual_model_old_without_augmentation/model.ckpt-10000.data-00000-of-00001
 /multilingual_model_old_without_augmentation/model.ckpt-20_temp_c283a91c707f4cc2a52358cea3e814ab/
+/bert_roman_urdu/model.ckpt-100000.data-00000-of-00001
+/bert_roman_urdu/pytorch_model.bin
+/bert_bilingual_roman_urdu/pytorch_model.bin
+/bert_bilingual_roman_urdu/model.ckpt-100000.data-00000-of-00001
