@@ -1,4 +1,5 @@
 # Project exclude paths
+.idea/
 venv/
 data/
 bert-master/
@@ -7,9 +8,14 @@ data_parts/
 pretraining_data/
 pretraining_data_augmented_vocab/
 bert-base-uncased/
-bert_bilingual_roman_urdu/
 all_data.txt
 augmented_vocab.txt
 BERT_ROMAN_URDU.ipynb
 roman-urdu-vocab*
 tf_examples_multi_cased.tfrecord
+/multilingual_model_old_without_augmentation/model.ckpt-6020.data-00000-of-00001
+/multilingual_model_old_without_augmentation/model.ckpt-7020.data-00000-of-00001
+/multilingual_model_old_without_augmentation/model.ckpt-8020.data-00000-of-00001
+/multilingual_model_old_without_augmentation/model.ckpt-9020.data-00000-of-00001
+/multilingual_model_old_without_augmentation/model.ckpt-10000.data-00000-of-00001
+/multilingual_model_old_without_augmentation/model.ckpt-20_temp_c283a91c707f4cc2a52358cea3e814ab/
