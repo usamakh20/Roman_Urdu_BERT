@@ -1,16 +1,15 @@
 import torch
 import pandas as pd
-from torch.utils.data import Dataset
 from sklearn.model_selection import train_test_split
-from transformers import BertForSequenceClassification, BertTokenizer, BertModel
-from transformers import DistilBertForSequenceClassification, Trainer, TrainingArguments
+from transformers import BertForSequenceClassification, BertTokenizer, Trainer, TrainingArguments
 from transformers.trainer_utils import EvaluationStrategy
 from torch.utils.data import DataLoader
-from transformers import DistilBertForSequenceClassification, AdamW
+from transformers import AdamW
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-model = BertForSequenceClassification.from_pretrained('bert_bilingual_roman_urdu', num_labels=3)
+model = BertForSequenceClassification.from_pretrained('results_senti_mix/checkpoint-4000',num_labels=3)
+# model = BertForSequenceClassification.from_pretrained('bert_bilingual_roman_urdu', num_labels=3)
 tokenizer = BertTokenizer.from_pretrained('bert_bilingual_roman_urdu')
 
 senti_mix_train = pd.read_csv('fine_tuning_data/SentiMix_train_ru.csv')
@@ -32,7 +31,7 @@ val_encodings = tokenizer(X_val, truncation=True, padding=True, max_length=128)
 test_encodings = tokenizer(X_test, truncation=True, padding=True, max_length=128)
 
 
-class SentiMixDataset(Dataset):
+class SentiMixDataset(torch.utils.data.Dataset):
     def __init__(self, encodings, labels):
         self.encodings = encodings
         self.labels = labels
@@ -85,9 +84,9 @@ trainer = Trainer(
     compute_metrics=compute_metrics
 )
 
-trainer.train()
+# trainer.train()
 
-trainer.evaluate()
+print(trainer.evaluate())
 
 # train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True)
 # model.to(device)
