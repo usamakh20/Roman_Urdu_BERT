@@ -17,3 +17,4 @@ tf_examples_multi_cased.tfrecord
 /bert_roman_urdu/pytorch_model.bin
 /bert_bilingual_roman_urdu/pytorch_model.bin
 /bert_bilingual_roman_urdu/model.ckpt-100000.data-00000-of-00001
+/.ipynb_checkpoints/
