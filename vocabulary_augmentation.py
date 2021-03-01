@@ -1,5 +1,5 @@
 english_vocab = open('bert-base-uncased/vocab.txt', 'r').read().split('\n')[:-1]
-roman_urdu_vocab = open('roman-urdu-vocab-uncased_50000-vocab.txt', 'r').read().split('\n')[:-1]
+roman_urdu_vocab = open('vocabulary/roman-urdu-vocab-uncased_50000-vocab.txt', 'r').read().split('\n')[:-1]
 
 common_vocab = list(set(english_vocab).intersection(set(roman_urdu_vocab)))
 
