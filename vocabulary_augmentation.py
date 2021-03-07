@@ -13,5 +13,5 @@ for i in range(len(augmented_vocab)):
     if augmented_vocab[i] == '':
         augmented_vocab[i] = roman_urdu_vocab.pop(0)
 
-with open('augmented_vocab.txt', 'w') as v:
+with open('vocabulary/augmented_vocab.txt', 'w') as v:
     v.write('\n'.join(augmented_vocab))
