@@ -15,7 +15,7 @@ roman_BWPT = tokenizers.BertWordPieceTokenizer(
 )
 
 roman_BWPT.train(
-    files=["all_data.txt"],
+    files=["data/uner_roman_urdu.txt"],
     vocab_size=vocab_length,
     min_frequency=3,
     limit_alphabet=1000,
@@ -23,4 +23,6 @@ roman_BWPT.train(
     special_tokens=['[PAD]', '[UNK]', '[CLS]', '[MASK]', '[SEP]']
 )
 
-roman_BWPT.save_model(".", "roman-urdu-vocab-uncased_"+str(vocab_length))
+roman_BWPT.get_vocab()
+
+# roman_BWPT.save_model(".", "test"+str(vocab_length))
