@@ -1,6 +1,9 @@
+from collections import Counter
 import tokenizers
 
-vocab_length = 30522
+special = ['[PAD]', '[UNK]', '[CLS]', '[MASK]', '[SEP]']
+
+english_vocab = open('bert-base-uncased/vocab.txt', 'r').read().split('\n')[:-1]
 
 roman_BWPT = tokenizers.BertWordPieceTokenizer(
     # add_special_tokens=True, # This argument doesn't work in the latest version of BertWordPieceTokenizer
@@ -15,14 +18,28 @@ roman_BWPT = tokenizers.BertWordPieceTokenizer(
 )
 
 roman_BWPT.train(
-    files=["data/uner_roman_urdu.txt"],
-    vocab_size=vocab_length,
+    files=["all_data.txt"],
+    vocab_size=2200,
     min_frequency=3,
-    limit_alphabet=1000,
+    limit_alphabet=25,
     show_progress=True,
-    special_tokens=['[PAD]', '[UNK]', '[CLS]', '[MASK]', '[SEP]']
+    special_tokens=special
 )
 
-roman_BWPT.get_vocab()
+vocab_dict = roman_BWPT.get_vocab()
 
-# roman_BWPT.save_model(".", "test"+str(vocab_length))
+common_vocab = list(set(english_vocab).intersection(set(vocab_dict)))
+
+
+def vocab_filter(item):
+    return item[0] not in common_vocab
+
+
+filtered_vocab = Counter(dict(filter(vocab_filter, vocab_dict.items()))).most_common()
+
+for i in range(1000):
+    if '[unused' in english_vocab[i]:
+        english_vocab[i] = filtered_vocab.pop()[0]
+
+with open('vocabulary/extended_vocab.txt', 'w') as v:
+    v.write('\n'.join(english_vocab)+'\n')
