@@ -12,8 +12,9 @@ BERT_ROMAN_URDU.ipynb
 tf_examples_multi_cased.tfrecord
 /model_roman_urdu/model.ckpt-100000.data-00000-of-00001
 /model_roman_urdu/pytorch_model.bin
-/model_bilingual_roman_urdu/pytorch_model.bin
-/model_bilingual_roman_urdu/model.ckpt-100000.data-00000-of-00001
+/model_bilingual_vocab_augmented/pytorch_model.bin
+/model_bilingual_vocab_augmented/model.ckpt-100000.data-00000-of-00001
 /.ipynb_checkpoints/
 results_senti_mix/
 /venv_tensorflow_1.15/
+/bert-multilingual-base-uncased/
