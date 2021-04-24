@@ -3,7 +3,7 @@ import tokenizers
 
 special = ['[PAD]', '[UNK]', '[CLS]', '[MASK]', '[SEP]']
 
-english_vocab = open('bert-base-uncased/vocab.txt', 'r').read().split('\n')[:-1]
+multilingual_vocab = open('bert-multilingual-base-uncased/vocab.txt', 'r').read().split('\n')[:-1]
 
 roman_BWPT = tokenizers.BertWordPieceTokenizer(
     # add_special_tokens=True, # This argument doesn't work in the latest version of BertWordPieceTokenizer
@@ -19,7 +19,7 @@ roman_BWPT = tokenizers.BertWordPieceTokenizer(
 
 roman_BWPT.train(
     files=["all_data.txt"],
-    vocab_size=2200,
+    vocab_size=600,
     min_frequency=3,
     limit_alphabet=25,
     show_progress=True,
@@ -28,7 +28,7 @@ roman_BWPT.train(
 
 vocab_dict = roman_BWPT.get_vocab()
 
-common_vocab = list(set(english_vocab).intersection(set(vocab_dict)))
+common_vocab = list(set(multilingual_vocab).intersection(set(vocab_dict)))
 
 
 def vocab_filter(item):
@@ -36,10 +36,11 @@ def vocab_filter(item):
 
 
 filtered_vocab = Counter(dict(filter(vocab_filter, vocab_dict.items()))).most_common()
+filtered_vocab.reverse()
 
-for i in range(1000):
-    if '[unused' in english_vocab[i]:
-        english_vocab[i] = filtered_vocab.pop()[0]
+for i in range(100):
+    if '[unused' in multilingual_vocab[i]:
+        multilingual_vocab[i] = filtered_vocab.pop()[0]
 
-with open('vocabulary/extended_vocab.txt', 'w') as v:
-    v.write('\n'.join(english_vocab)+'\n')
+with open('model_multilingual_vocab_extension/vocab.txt', 'w') as v:
+    v.write('\n'.join(multilingual_vocab) + '\n')
