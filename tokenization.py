@@ -1,6 +1,6 @@
 import tokenizers
 
-vocab_length = 30522
+vocab_length = 105879
 
 roman_BWPT = tokenizers.BertWordPieceTokenizer(
     # add_special_tokens=True, # This argument doesn't work in the latest version of BertWordPieceTokenizer
@@ -23,4 +23,5 @@ roman_BWPT.train(
     special_tokens=['[PAD]', '[UNK]', '[CLS]', '[MASK]', '[SEP]']
 )
 
-roman_BWPT.save_model(".", "roman-urdu-vocab-uncased_"+str(vocab_length))
+roman_BWPT.save_model("vocabulary", "roman-urdu-vocab-uncased_"+str(vocab_length))
+
