@@ -19,3 +19,4 @@ results_senti_mix/
 /venv_tensorflow_1.15/
 /bert-multilingual-base-uncased/
 /venv/
+/venv_cpu/
