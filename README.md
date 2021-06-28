@@ -14,4 +14,8 @@ transformers-cli convert --model_type bert \
   --tf_checkpoint $BERT_BASE_DIR/model.ckpt-100000 \
   --config bert-base-uncased/bert_config.json \
   --pytorch_dump_output $BERT_BASE_DIR/pytorch_model.bin
+  
+ ### Trained Models
+ Download Trained models from:
+ https://drive.google.com/drive/folders/10GCkA1DlorddMkeR_u5yi8k2Mt85vgXy?usp=sharing
 
