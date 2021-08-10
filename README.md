@@ -19,3 +19,7 @@ transformers-cli convert --model_type bert \
  Download Trained models from:
  https://drive.google.com/drive/folders/10GCkA1DlorddMkeR_u5yi8k2Mt85vgXy?usp=sharing
 
+## Important!!!
+
+This project contains large files that have been split to meet GitHub file size requirements.
+Please run: "python3 file_split_merge.py --merge" at project root to get the original files back
