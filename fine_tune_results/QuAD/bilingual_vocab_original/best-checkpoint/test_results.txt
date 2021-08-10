@@ -1,0 +1,6 @@
+{'epoch': 10.0,
+ 'eval_exact_match': 17.4468085106383,
+ 'eval_f1': 31.756325672995743,
+ 'eval_loss': 2.0616064071655273,
+ 'eval_runtime': 3.2378,
+ 'eval_samples_per_second': 157.206}
