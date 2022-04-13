@@ -8,3 +8,4 @@ torchvision==0.9.1
 transformers==4.5.1
 datasets==1.6.1
 seqeval==1.2.2
+filesplit==3.0.2
