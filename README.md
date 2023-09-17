@@ -6,9 +6,6 @@
 ### Experiments
 1. Experiment with different vocabulary sizes (Note common tokens and performance)
 
-### Trained Models
-https://drive.google.com/drive/folders/10etMf-R2wY0lGbueRNQiJcJr2RNUZ4cB?usp=drive_link
-
 ### Fine Tuning
 export BERT_BASE_DIR=bert_bilingual_roman_urdu
 
